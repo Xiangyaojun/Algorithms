@@ -1,4 +1,5 @@
 '''
+leetcode 35
 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
 
 你可以假设数组中无重复元素。
@@ -30,12 +31,12 @@ class Solution:
             if nums[mid]==target:
                 return mid
             elif target > nums[mid]:
-                if  mid==len(nums) -1 or target < nums[mid+1]:
+                if mid==len(nums) -1 or target < nums[mid+1]:
                     return mid +1
                 else:
                     begin = mid +1
             elif target < nums[mid]:
-                if  mid==0 or target > nums[mid-1]:
+                if mid==0 or target > nums[mid-1]:
                     return mid
                 else:
                     end = mid - 1
