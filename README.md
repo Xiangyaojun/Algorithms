@@ -3,7 +3,7 @@
   <a href="https://github.com/conghuaicai/leetcode">
   <img src="http://p6sh0jwf6.bkt.clouddn.com/2018-04-10-035523.jpg" width="400"></a>
   <br>
-  LeetCode Algorithms & Data structures in Python.
+  Algorithms & Data structures in Python.
   <br>
 </h1>
 
