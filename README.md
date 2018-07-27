@@ -1,1 +1,1 @@
-# Algorithms
+# Algorithms & Data structures in Python.
