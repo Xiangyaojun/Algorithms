@@ -7,12 +7,6 @@
   <br>
 </h1>
 
-<div align="center">
-
-[![language](https://img.shields.io/badge/language-Java-green.svg)](https://img.shields.io/badge/language-Java-green.svg)
-
-</div>
-
 
 ## 说明
 
