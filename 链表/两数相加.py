@@ -1,3 +1,4 @@
+# coding:utf-8
 '''
 leetcode 2
 
