@@ -15,14 +15,15 @@ class TreeNode:
 
 class Solution:
 
-    def preOrder_Recursive(self,root):
+    def preOrder_Recursive(self, root):
         """
         :type root:TreeNode
         """
         if root!=None:
-            print(root.val)#visit the current node
+            print(root.val) #visit the current node
             self.preOrder_Recursive(root.left)
             self.preOrder_Recursive(root.right)
+            
     def preOrder(self, root):
         """
         :type root:TreeNode
