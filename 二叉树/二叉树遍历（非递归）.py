@@ -51,7 +51,8 @@ class Solution:
             if cur!=None:
                 s.append(cur)
                 cur = cur.left
-            else:#此时，必然是访问到最左节点后，当前节点为空，只能出栈
+            else:
+                # 此时，必然是访问到最左节点后，当前节点为空，只能出栈
                 cur = s.pop(-1)
                 print(cur.val)
                 cur = cur.right
@@ -62,13 +63,13 @@ class Solution:
         """
         s = []
         cur = root
-        rear = None #设置一个指针，表示当前节点是否被访问过
+        rear = None # 设置一个指针，表示当前节点是否被访问过
         while cur!=None or len(s)>0:
             if cur!=None:
                 s.append(cur)
                 cur = cur.left
             else:
-                temp = s[-1] #此时不需要立即出栈，因为后序遍历需要访问右子树后，才访问当前父节点
+                temp = s[-1] # 此时不需要立即出栈，因为后序遍历需要访问右子树后，才访问当前父节点
                 if temp.right!=None and rear!=temp.right:
                     cur = temp.right
                 else:
