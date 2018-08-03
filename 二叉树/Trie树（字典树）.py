@@ -21,11 +21,9 @@ trie.search("app");     // 返回 true
 
 class TrieNode():
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        self.nodes = {}
-        self.val = val
+        self.childs = [] #当前节点的所有子节点
+        self.data = "" #当前节点的表示的字符串
+        self.isLeaf = False
 
 class Trie:
 
@@ -33,38 +31,75 @@ class Trie:
         self.root = TrieNode()
 
     def insert(self, word):
-        """
-        Inserts a word into the trie.
-        :type word: str
-        :rtype: void
-        """
-        if word[0] in self.nodes:
-            node = self.nodes.get(word[0])
-        else:
-            self.nodes[word[0]] = 
-        
-        for char in word:
-            if char in cur.nodes:
-                cur.nodes[char] = 
-        cur.isword = True
+        cur = self.root
+        i = 0
+        while(i<len(word)):
+            prefix = cur.data + word[i]
+
+            # 构建当前节点所有子节点的hashmap
+            hash_map = {}
+            for node in cur.childs:
+                hash_map[node.data] = node
+
+            # 判断前缀是否在子节点中
+            if prefix in hash_map:
+                cur = hash_map[prefix]
+            else:
+                new_node = TrieNode()
+                new_node.data = prefix
+                cur.childs.append(new_node)
+                cur = new_node
+            #当i访问到最后一个字符时，将节点置为叶节点
+            if i == len(word)-1:
+                cur.isLeaf = True
+            i += 1
+
 
     def search(self, word):
-        """
-        Returns if the word is in the trie.
-        :type word: str
-        :rtype: bool
-        """
-        
+        cur = self.root
+        i = 0
+        while i < len(word):
+            prefix = cur.data + word[i]
+            # 构建当前节点所有子节点的hashmap
+            hash_map = {}
+            for node in cur.childs:
+                hash_map[node.data] = node
+            # 判断前缀是否在子节点中
+            if prefix in hash_map:
+                cur = hash_map[prefix]
+            else:
+                return False
+            i += 1
 
-    def startsWith(self, prefix):
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        :type prefix: str
-        :rtype: bool
-        """
-        
+        if i == len(word) and cur.isLeaf == True:
+            return True
+        else:
+            return False
+
+    def startsWith(self, word):
+        # 判断是否有前缀word节点
+        cur = self.root
+        i = 0
+        while i < len(word):
+            prefix = cur.data + word[i]
+            # 构建当前节点所有子节点的hashmap
+            hash_map = {}
+            for node in cur.childs:
+                hash_map[node.data] = node
+
+            # 判断前缀是否在子节点中
+            if prefix in hash_map:
+                cur = hash_map[prefix]
+            else:
+                return False
+            i += 1
+
+        if i == len(word):
+            return True
+        else:
+            return False
 
 obj = Trie()
-obj.insert("abc")
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
+obj.insert("a")
+obj.insert("apps")
+print(obj.search("apps"))
