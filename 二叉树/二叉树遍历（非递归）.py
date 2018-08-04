@@ -93,6 +93,34 @@ class Solution:
         root.right.right = TreeNode(7)
         return root
 
+    def pre_order_traversal(self,root):  # 前序
+        # 思想很简单，前序遍历是一个 中左右 的顺序，刚好符合栈的一个入栈出栈的顺序
+        result = []
+        stack = []
+        stack.append(root)
+        while len(stack) != 0:
+            node = stack.pop()
+            if node == None:
+                continue
+            result.append(node.val)
+            stack.append(node.right)
+            stack.append(node.left)
+        return result
+
+    def post_order_traversal(self,root):  # 前序
+        # 基于前面前序的思想 前序是中左右 -> 中右左 -> 倒序最后的结果数组，就可以得到 左右中的后序遍历结果
+        result = []
+        stack = []
+        stack.append(root)
+        while len(stack) != 0:
+            node = stack.pop()
+            if node == None:
+                continue
+            result.append(node.val)
+            stack.append(node.left)
+            stack.append(node.right)
+        return result[::-1] #倒序最后的结果
+
 solu = Solution()
 root = solu.constructTree()
-solu.postOrder(root)
+print(solu.pre_order_traversal(root))

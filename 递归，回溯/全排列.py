@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # coding:utf-8
 '''
 leetcode 46
@@ -36,3 +37,13 @@ class Solution:
 solu = Solution()
 nums = [1, 2, 3, 4]
 solu.permutation(nums, 0, len(nums)-1)
+=======
+# coding:utf-8
+
+'''
+
+'''
+
+class Solution:
+    def permute(self,array):
+>>>>>>> master
