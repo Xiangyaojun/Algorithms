@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # coding:utf-8
 '''
 leetcode 46
@@ -7,6 +6,7 @@ leetcode 46
 2.非递归算法
 解析：
 直观来看，存在n!个不同的排列，时间复杂度为O(n*n!)
+
 leetcode 47
 全排列（有重复元素的序列）
 1.递归算法
@@ -33,17 +33,7 @@ class Solution:
 
     def permute(self,nums):
 
-
+        pass
 solu = Solution()
 nums = [1, 2, 3, 4]
 solu.permutation(nums, 0, len(nums)-1)
-=======
-# coding:utf-8
-
-'''
-
-'''
-
-class Solution:
-    def permute(self,array):
->>>>>>> master
