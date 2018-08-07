@@ -1,3 +1,5 @@
+# coding:utf-8
+
 from utils import constructTree
 # Definition for a binary tree node.
 class TreeNode:
