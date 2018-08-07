@@ -13,6 +13,7 @@
   完全二叉树的基本性质：编号i的节点的左孩子为2i，右孩子为2i+1，父节点为|_i/2_|
 '''
 
+from utils import constructTree
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -71,16 +72,6 @@ class Solution:
             i -= 1
         return cur
 
-    def constructTree(self):
-        root = TreeNode(1)
-        root.left = TreeNode(2)
-        root.right = TreeNode(3)
-        root.left.left = TreeNode(4)
-        root.left.right = TreeNode(5)
-        root.right.left = TreeNode(6)
-        root.right.right = TreeNode(7)
-        return root
-
 solu = Solution()
-root = solu.constructTree()
+root = constructTree()
 print(solu.getLastNode(root).val)

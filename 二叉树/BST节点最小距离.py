@@ -26,6 +26,7 @@ BST的中序遍历就是一个升序数组，而不同节点的最小绝对差�
 1.递归：中序递归遍历，时间：O(n)，空间：O(n)
 2.非递归：中序非递归，时间：O(n)，空间：O(n)
 '''
+import sys
 
 class TreeNode:
     def __init__(self, x):
@@ -33,7 +34,6 @@ class TreeNode:
         self.left = None
         self.right = None
 
-import sys
 class Solution:
     def getMinimumDifference_I(self, root):
         # 基于非递归中序遍历
