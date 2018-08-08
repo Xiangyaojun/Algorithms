@@ -9,7 +9,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-def construct_List_I(nums):
+def construct_List_I(nums=[1, 2, 3, 4, 5]):
     # 尾插法构建链表:正序
     if len(nums) == 0:
         return None
@@ -22,7 +22,7 @@ def construct_List_I(nums):
     return root
 
 
-def construct_List_II(nums):
+def construct_List_II(nums=[1, 2, 3, 4, 5]):
     # 头插法构建链表：倒序
     if len(nums) == 0:
         return None
