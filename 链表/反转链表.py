@@ -20,6 +20,7 @@ leetcode 92：反转链表 II
 输出: 1->4->3->2->5->NULL
 
 '''
+from utils import construct_List_I, travel_List
 
 class ListNode:
     def __init__(self,x):
@@ -27,18 +28,6 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def construct_List(self,nums):
-        #尾插法构建链表
-        if len(nums)==0:
-            return None
-        root = ListNode(nums[0])
-        cur = root
-        for i in range(1, len(nums)):
-            node = ListNode(nums[i])
-            cur.next = node
-            cur = node
-        return root
-
     def reverseList_I(self, root):
         if root == None: return root
         cur = root.next
@@ -53,6 +42,7 @@ class Solution:
         return root
 
     def reverseList_II(self, root, m, n):
+        # 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。w
         if root == None or n <= m:
             return root
         i = 1
@@ -83,17 +73,7 @@ class Solution:
             pre_head.next = reverse_start
             return root
 
-        
-    def travelList(self, root):
-        #遍历链表
-        cur = root
-        result = []
-        while cur!=None:
-            result.append(cur.val)
-            cur = cur.next
-        return result
-
+root = construct_List_I([1, 2, 3, 4, 5, 6])
 solu = Solution()
-root = solu.construct_List([1, 2, 3, 4, 5, 6])
 root = solu.reverseList_II(root, 1, 6)
 print(solu.travelList(root))
