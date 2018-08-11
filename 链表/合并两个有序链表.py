@@ -4,6 +4,7 @@ leetcode 21
 合并两个有序链表
 解析：思路和合并两个有序数组一样
 '''
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -18,3 +19,4 @@ class Solution:
         while cur1 != None and cur2 != None:
             if cur1.val <= cur2.val:
                cur1 = cur1.next
+
