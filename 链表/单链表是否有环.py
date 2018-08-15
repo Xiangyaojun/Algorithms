@@ -11,7 +11,7 @@ leetcode 141 142
 2.快慢指针法：设置一个快指针每次走2步，慢指针每次走1步，两个指针同时出发，当两个指针交汇时，则链表有环。
 找出环的开始点：记录第一次相遇的点，分别设置两个指针，一个是头节点，一个从相遇节点开始走，都每次走一个，当两个指针相遇的点就是起始点。
 '''
-from utils import construct_List_I, travel_List
+from utils import construct_List_I
 
 class ListNode:
     def __init__(self,x):

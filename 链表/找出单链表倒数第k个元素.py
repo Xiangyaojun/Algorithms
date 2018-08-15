@@ -24,10 +24,11 @@ class Solution:
         slow = head
 
         i = k
-        while i > 0:
+        while fast and i > 0:
             fast = fast.next
-            i = i-1
-        while fast!=None:
+            i = i - 1
+        if i > 0: return None
+        while slow and fast:
             slow = slow.next
             fast = fast.next
         return slow
