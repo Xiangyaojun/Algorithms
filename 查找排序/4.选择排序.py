@@ -17,5 +17,4 @@ class Solution:
         return nums
 
 solu = Solution()
-nums = [5, 3, 2, 5, 1, 5, 7, 3, 9, 8, 7]
 print(solu.selectSort([5, 3, 2, 5, 1, 5, 7, 3, 9, 8, 7]))

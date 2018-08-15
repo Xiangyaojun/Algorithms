@@ -42,7 +42,7 @@ class Solution:
         return root
 
     def reverseList_II(self, root, m, n):
-        # 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。w
+        # 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转
         if root == None or n <= m:
             return root
         i = 1
