@@ -25,7 +25,7 @@ class TreeNode:
 class Solution:
     def getLastNode(self,root):
         cur = root
-        # 递归求出完全二叉树的最大深度
+        # 求出完全二叉树的最大深度
         depth = self.getMaxDepth(root)
 
         level = 1

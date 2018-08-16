@@ -39,6 +39,7 @@ leetcode 107. 二叉树的层次遍历 II
   [9,20],
   [3]
 ]
+解析：需要设置rear指针表示最近入队节点，当出队访问到每一层的最右节点时,最近入队的节点就是下一层的最右节点
 '''
 
 from utils import constructTree
@@ -52,7 +53,29 @@ class TreeNode:
 class Solution:
 
     def levelOrder(self, root):
-        pass
+        if not root:
+            return []
+        result = []
+        queue = []
+        rear = root  # 指向最近入队节点
+        last = root  # 指向最右节点
+        queue.append(root)
+
+        row = []
+        while len(queue) > 0:
+            cur = queue.pop(0)
+            row.append(cur.val)
+            if cur.left:
+                queue.append(cur.left)
+                rear = cur.left
+            if cur.right:
+                queue.append(cur.right)
+                rear = cur.right
+            if cur == last:
+                result.append(row)
+                row = []
+                last = rear
+        return result
 
 solu = Solution()
 root = constructTree()
