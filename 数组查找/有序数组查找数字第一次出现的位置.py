@@ -7,6 +7,7 @@
 2.二分查找法：本身二分查找可以定位数组中某一个target的位置，由于我们是要找第一次出现target的位置，比如在[1, 2, 3, 3, 4, 5, 10]找3这个数，
 通过第一次查找mid，判断nums[mid]是否等于target，如果等于则第一次出现target坐标一定在[left,mid]之中，同理如果想找最后一次出现target的坐标，则target坐标一定在[mid,right]之中
 这里需要设置终止条件left + 1 < right，为两个指针相隔为1时候接结束。
+
 '''
 class Solution:
     def binarySearch(self,nums, target):
