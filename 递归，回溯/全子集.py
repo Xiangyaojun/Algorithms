@@ -46,9 +46,9 @@ class Solution(object):
         # 基于位运算
         result = []
         for i in range(2**len(nums)):
-            item = []
+            item = []  # 此时i就是每一个子集的编号，将其转换成二进制以后就可以标记每个元素的状态
             for j in range(len(nums)):
-                if i & (2**j) > 0:
+                if i & (2**j) > 0:  # 基于当前编码和2^j与运算，判断nums[j]元素是否被选中
                     item.append(nums[j])
             result.append(item)
         return result
