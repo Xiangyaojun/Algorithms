@@ -21,8 +21,8 @@ trie.search("app");     // 返回 true
 
 class TrieNode():
     def __init__(self):
-        self.childs = [] #当前节点的所有子节点
-        self.data = "" #当前节点的表示的字符串
+        self.childs = []  # 当前节点的所有子节点
+        self.data = ""  # 当前节点的表示的字符串
         self.isLeaf = False
 
 class Trie:

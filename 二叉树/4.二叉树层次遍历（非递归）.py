@@ -71,7 +71,7 @@ class Solution:
             if cur.right:
                 queue.append(cur.right)
                 rear = cur.right
-            if cur == last:
+            if cur == last:  # 如果当前出队节点指向最右节点，证明这一层已经访问完
                 result.append(row)
                 row = []
                 last = rear

@@ -3,6 +3,7 @@
 '''
          最优          最坏      平均        空间      稳定
 快速排序：O(nlogn)    O(n^2)    O(nlogn)     O(logn)   否
+
 '''
 
 
@@ -17,9 +18,11 @@ class Solution:
     def partition(self, nums, left, right):
         pivot = nums[left]
         while left < right:
-            while left < right and nums[right] >= pivot: right -= 1
+            while left < right and nums[right] >= pivot:
+                right -= 1
             nums[left] = nums[right]
-            while left < right and nums[left] <= pivot: left += 1
+            while left < right and nums[left] <= pivot:
+                left += 1
             nums[right] = nums[left]
         nums[left] = pivot
         return left

@@ -50,8 +50,8 @@ class Solution:
                 result.append(cur.val)
                 cur = cur.right
 
-        for i in range(1,len(result)):
-            temp = result[i]- result[i-1]
+        for i in range(1, len(result)):
+            temp = result[i] - result[i-1]
             if temp < minDiff:
                 minDiff = temp
 
@@ -60,7 +60,7 @@ class Solution:
     def getMinimumDifference_II(self,root):
         # 基于递归中序遍历
         minDiff = sys.maxsize
-        result = self.inOrder(root,[])
+        result = self.inOrder(root, [])
 
         for i in range(1,len(result)):
             temp = result[i]- result[i-1]

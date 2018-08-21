@@ -26,8 +26,8 @@ class Solution:
                 s.append(cur)
                 cur = cur.left
             else:
-                temp = s[-1] # 此时不需要立即出栈，因为后序遍历需要访问右子树后，才访问当前父节点
-                if temp.right!=None and rear!=temp.right:
+                temp = s[-1]  # 此时不需要立即出栈，因为后序遍历需要访问右子树后，才访问当前父节点
+                if temp.right and rear != temp.right:  # 如果存在右子树且未被访问
                     cur = temp.right
                 else:
                     '''
@@ -38,7 +38,7 @@ class Solution:
                     cur = s.pop(-1)
                     result.append(cur.val)
                     rear = cur
-                    cur = None # 注意：还需要cur置空操作
+                    cur = None  # 注意：还需要cur置空操作
 
         return result
 
