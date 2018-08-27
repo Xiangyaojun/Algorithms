@@ -11,7 +11,7 @@
 
 
 class Solution:
-    def shellSort(self,nums):
+    def shellSort(self, nums):
         step = len(nums) // 2
         while step > 0:
             for i in range(step, len(nums)):
