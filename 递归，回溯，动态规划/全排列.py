@@ -1,4 +1,5 @@
 # coding:utf-8
+
 '''
 leetcode 46
 全排列（没有重复元素的序列）
